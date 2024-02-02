@@ -71,18 +71,24 @@ const rankingSchema = new mongoose.Schema({
   date : {
     type: Date,
     required: true
+  },
+  ip:{
+    type: String,
+    required: true
   }
 })
 
 const rankingModel = mongoose.model("rankingTeams", rankingSchema);
 
 router.post("/saveteams",(req,res)=>{
-  
+  console.log(req.ip)
 
   const savedRanking = new rankingModel({
           manager: req.body.manager,
           teams: req.body.ranking,
           date : Date(),
+          ip : JSON.stringify(req.ip)
+
         })
   
   savedRanking.save().then(res.send("saved").status(200))
