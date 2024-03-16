@@ -13,12 +13,13 @@ const teamsSchema = new mongoose.Schema({
       type: Array,
       required  : true
   }
+
 })
 
-const Teams = mongoose.model("PLteams", teamsSchema);
+const Teams = mongoose.model("Seria_A_teams", teamsSchema);
 
 // router.get('/saveteams', (req, res)=> {
-//   axios.get("https://v3.football.api-sports.io/teams?league=39&season=2023",{
+//   axios.get("https://v3.football.api-sports.io/teams?league=135&season=2023",{
 //     headers: {
 //       "x-rapidapi-key" :   process.env.sportApiKey,
 //       "x-rapidapi-host":   "v3.football.api-sports.io"
@@ -35,10 +36,12 @@ const Teams = mongoose.model("PLteams", teamsSchema);
 //         id: team.id,
 //         name: team.name,
 //         logo: team.logo,
+//         manager: ""
 //       };
 //     });
-//     const list = new teams({
-//       name: "Premier League",
+
+//     const list = new Teams({
+//       name: "Seria A",
 //       teams: result2,
 //     })
 
@@ -62,7 +65,6 @@ const rankingSchema = new mongoose.Schema({
   manager :{
       type: Object,
       required: true
-      
   },
   teams:{
       type: Array,
