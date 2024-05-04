@@ -6,7 +6,7 @@ const axios = require("axios");
 
 const {Teams, rankingModel} = require("../schema");
 
-  const leagueName = "La Liga"
+  const leagueName = "seria-a"
 
 // router.get('/saveteams', (req, res)=> {
 
@@ -72,7 +72,7 @@ router.get("/getteams", (req,res)=>{
   Teams
   .find()
   // .then (  (elements) =>  {res.send(elements.map(ele=>ele.name)).status(200)})
-  .then (  (elements) =>  {res.send(elements[3].teams).status(200)})
+  .then (  (elements) =>  {res.send(elements[1].teams).status(200)})
   .catch(  (err)   =>  {res.send(err).status(500)})
 })
 
